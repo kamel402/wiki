@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block body %}
+    {% if length == 0 %}
+        <h1>There is no page with that name</h1>
+    {% else %}
+        <h1>You mean:</h1>
+        <ul>
+            {% for entry in entries %}
+                <li><a href="{{entry}}">{{ entry }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
